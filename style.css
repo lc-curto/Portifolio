@@ -459,12 +459,15 @@ tbody tr:hover td {
 }
 
 
+
 /* ============================================
    8. FORMULÁRIO
    ============================================ */
 
-form {
+#contact form {
+    width: 100%;
     max-width: 600px;
+    margin: 0 auto;
 }
 
 label {
@@ -477,6 +480,7 @@ input,
 textarea {
     display: block;
     width: 100%;
+    box-sizing: border-box;
     padding: 12px;
     font-family: inherit;
     font-size: 1rem;
@@ -506,6 +510,12 @@ form button:hover {
     background-color: #1d4ed8;
 }
 
+/* Ajustes para ecrãs pequenos */
+@media (max-width: 600px) {
+    #contact form {
+        max-width: 100%;
+    }
+}
 
 /* Janela de código */
 .code-window {
