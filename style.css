@@ -582,24 +582,19 @@ li {
     color: var(--cor-texto-secundario);
 }
 
-/* Os projetos têm mais contraste e funcionam como cartões de portfólio. */
+/* Os projetos mantêm cartões próprios, mas seguem a identidade visual geral. */
 .projects-section {
-    background-color: var(--cor-marca-primaria);
-    border-color: var(--cor-marca-primaria);
-}
-
-.projects-section .section-label,
-.projects-section h2 {
-    color: var(--cor-texto-claro);
+    background-color: var(--cor-superficie-cartao);
+    border-color: var(--cor-borda-padrao);
 }
 
 .projects-section h2::after {
-    background-color: #93c5fd;
+    background-color: var(--cor-interacao-principal);
 }
 
 .projects-section .section-intro,
 .projects-section .projects-note {
-    color: #cbd5e1;
+    color: var(--cor-texto-secundario);
 }
 
 .projects-showcase {
@@ -613,15 +608,17 @@ li {
     min-width: 0;
     flex-direction: column;
     padding: 26px;
-    background-color: #17365c;
-    color: var(--cor-texto-claro);
-    border: 1px solid rgba(255, 255, 255, 0.14);
+    background-color: var(--cor-superficie-cartao);
+    color: var(--cor-texto-principal);
+    border: 1px solid var(--cor-borda-padrao);
+    border-top: 4px solid var(--cor-interacao-principal);
     border-radius: 10px;
-    box-shadow: none;
+    box-shadow: 0 2px 8px var(--cor-sombra);
 }
 
 .project-card-accent {
-    background-color: #1e4775;
+    background-color: var(--cor-superficie-secundaria);
+    border-top-color: var(--cor-marca-secundaria);
 }
 
 .project-card-top {
@@ -633,7 +630,7 @@ li {
 }
 
 .project-type {
-    color: #bfdbfe;
+    color: var(--cor-interacao-principal);
     font-size: 0.75rem;
     font-weight: bold;
     letter-spacing: 0.08em;
@@ -642,19 +639,19 @@ li {
 .project-card .project-status {
     margin: 0;
     padding: 3px 9px;
-    background-color: rgba(255, 255, 255, 0.12);
-    color: #dbeafe;
+    background-color: var(--cor-destaque-suave);
+    color: var(--cor-marca-primaria);
     font-size: 0.75rem;
 }
 
 .project-card h3 {
     margin: 0 0 12px;
-    color: var(--cor-texto-claro);
+    color: var(--cor-marca-primaria);
     font-size: 1.35rem;
 }
 
 .project-card p {
-    color: #dbeafe;
+    color: var(--cor-texto-secundario);
 }
 
 .project-techs {
@@ -667,9 +664,9 @@ li {
 
 .project-techs span {
     padding: 4px 9px;
-    color: #e0edff;
+    color: var(--cor-marca-secundaria);
     font-size: 0.8rem;
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    border: 1px solid var(--cor-borda-padrao);
     border-radius: 4px;
 }
 
@@ -681,8 +678,8 @@ li {
 }
 
 .project-card .project-link:hover {
-    background-color: #60a5fa;
-    color: var(--cor-marca-primaria);
+    background-color: var(--cor-interacao-hover);
+    color: var(--cor-texto-claro);
 }
 
 .projects-note {
