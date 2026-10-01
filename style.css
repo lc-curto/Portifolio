@@ -155,6 +155,7 @@ main {
 }
 
 section {
+    margin-top: 25px;
     margin-bottom: 25px;
     padding: 30px;
     background: white;
