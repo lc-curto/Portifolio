@@ -11,9 +11,8 @@
 </head>
 
 <body>
-    <!-- Navegação para as principais secções da página -->
     <nav>
-        <a href="#home" class="logo">LC<span>.</span></a>
+        <a href="#home">LC<span>.</span></a>
         <ul>
             <li><a href="#about">Sobre mim</a></li>
             <li><a href="#hobbies">Interesses</a></li>
@@ -24,18 +23,16 @@
         </ul>
     </nav>
 
-    <!-- Apresentação inicial -->
     <header id="home">
-        <div class="hero">
+        <div class="container hero">
             <div>
                 <h1>Olá, sou o Lucas Curto.<br><span>A aprender. A construir.</span></h1>
                 <p>Desenvolvimento de software, lógica, bases de dados e curiosidade para perceber como as coisas funcionam.</p>
-                <a href="#projects" class="button">Ver projetos</a>
-                <a href="https://github.com/lc-curto" target="_blank" rel="noopener noreferrer" class="button secondary">Visitar GitHub</a>
+                <a class="button" href="#projects">Ver projetos</a>
+                <a class="button outline" href="https://github.com/lc-curto" target="_blank" rel="noopener noreferrer">Visitar GitHub</a>
             </div>
 
-            <!-- Um pequeno exemplo de código como elemento visual -->
-            <pre class="code-box"><code>const developer = {
+            <pre class="code"><code>const developer = {
   name: "Lucas Curto",
   skills: ["HTML", "CSS", "C#"],
   status: "A aprender"
@@ -43,10 +40,10 @@
         </div>
     </header>
 
-    <main>
+    <main class="container">
         <section id="about">
             <h2>Um pouco sobre mim</h2>
-            <div class="about-content">
+            <div class="about">
                 <div>
                     <p>Sou Lucas Curto, estudante de Desenvolvimento de Software, com interesse em criar aplicações web e sistemas de gestão.</p>
                     <p>Tenho conhecimentos de <strong>HTML e CSS</strong> e estou a desenvolver competências em <strong>C# e .NET</strong>, através de exercícios práticos e projetos pessoais. Estou também a explorar tecnologias como <strong>Python, FastAPI, React e TypeScript</strong>.</p>
@@ -54,7 +51,7 @@
                     <p>Ao longo da minha formação, quero aprofundar conhecimentos em <strong>bases de dados, programação orientada a objetos, desenvolvimento web, APIs e qualidade de software</strong>.</p>
                 </div>
 
-                <div class="profile-card">
+                <div class="profile">
                     <img src="images/perfil.jpeg" alt="Foto de perfil de Lucas Curto">
                     <h3>Lucas Curto</h3>
                     <p>Estudante de Desenvolvimento de Software</p>
@@ -67,7 +64,7 @@
             <h2>Interesses</h2>
             <p>Áreas que despertam a minha curiosidade e fazem parte do meu percurso.</p>
 
-            <div class="interest-list">
+            <div class="list">
                 <article><strong>01</strong><div><h3>Programação</h3><p>Desenvolver soluções, resolver problemas e aprender lógica de programação.</p></div></article>
                 <article><strong>02</strong><div><h3>Desenvolvimento Web</h3><p>Criar páginas Web organizadas, acessíveis e visualmente apelativas com HTML e CSS.</p></div></article>
                 <article><strong>03</strong><div><h3>Back-end e dados</h3><p>Compreender o funcionamento das aplicações e a organização dos dados.</p></div></article>
@@ -80,23 +77,23 @@
             <h2>Projetos</h2>
             <p>Projetos que demonstram o meu percurso no desenvolvimento de software.</p>
 
-            <div class="project-list">
-                <article class="project-card">
+            <div class="list projects">
+                <article class="card">
                     <small>API · BACK-END</small>
                     <span class="status">Em desenvolvimento</span>
                     <h3>Distribution Hub API</h3>
                     <p>API para apoiar a gestão comercial de empresas, com o objetivo de organizar operações comerciais.</p>
-                    <p class="technologies">Python · FastAPI</p>
-                    <a href="https://github.com/lc-curto/distribution-hub-api" target="_blank" rel="noopener noreferrer">Ver projeto →</a>
+                    <p class="tech">Python · FastAPI</p>
+                    <a class="button" href="https://github.com/lc-curto/distribution-hub-api" target="_blank" rel="noopener noreferrer">Ver projeto →</a>
                 </article>
 
-                <article class="project-card featured">
+                <article class="card featured">
                     <small>INTERFACE · FRONT-END</small>
                     <span class="status">Em desenvolvimento</span>
                     <h3>Distribution Hub Web</h3>
                     <p>Interface Web para um sistema de gestão comercial, pensada para facilitar a interação dos utilizadores com a aplicação.</p>
-                    <p class="technologies">React · TypeScript · Vite</p>
-                    <a href="https://github.com/lc-curto/distribution-hub-web" target="_blank" rel="noopener noreferrer">Ver projeto →</a>
+                    <p class="tech">React · TypeScript · Vite</p>
+                    <a class="button" href="https://github.com/lc-curto/distribution-hub-web" target="_blank" rel="noopener noreferrer">Ver projeto →</a>
                 </article>
             </div>
             <p><em>Os projetos serão atualizados à medida que forem desenvolvidos.</em></p>
@@ -115,7 +112,7 @@
         <section id="schedule">
             <h2>O meu horário</h2>
             <p>Horário semanal das atividades de formação.</p>
-            <div class="table-wrapper">
+            <div class="table">
                 <table>
                     <caption>Horário semanal de formação</caption>
                     <thead>
