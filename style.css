@@ -521,6 +521,175 @@ li {
 }
 
 /* ============================================
+   9. INTERESSES E PROJETOS
+   ============================================ */
+
+.section-heading {
+    max-width: 620px;
+    margin-bottom: 28px;
+}
+
+.section-heading h2 {
+    margin-bottom: 12px;
+}
+
+.section-label {
+    margin-bottom: 8px;
+    color: var(--cor-interacao-principal);
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.section-intro {
+    max-width: 58ch;
+    margin-bottom: 0;
+    color: var(--cor-texto-secundario);
+}
+
+/* Os interesses funcionam como uma lista leve e editorial. */
+.interest-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 28px;
+    border-top: 1px solid var(--cor-borda-padrao);
+}
+
+.interest-item {
+    display: flex;
+    flex: 1 1 42%;
+    gap: 18px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--cor-borda-padrao);
+}
+
+.interest-number {
+    flex: 0 0 auto;
+    color: var(--cor-interacao-principal);
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.interest-item h3 {
+    margin: 0 0 6px;
+    font-size: 1.15rem;
+}
+
+.interest-item p {
+    margin: 0;
+    color: var(--cor-texto-secundario);
+}
+
+/* Os projetos têm mais contraste e funcionam como cartões de portfólio. */
+.projects-section {
+    background-color: var(--cor-marca-primaria);
+    border-color: var(--cor-marca-primaria);
+}
+
+.projects-section .section-label,
+.projects-section h2 {
+    color: var(--cor-texto-claro);
+}
+
+.projects-section h2::after {
+    background-color: #93c5fd;
+}
+
+.projects-section .section-intro,
+.projects-section .projects-note {
+    color: #cbd5e1;
+}
+
+.projects-showcase {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.project-card {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    padding: 26px;
+    background-color: #17365c;
+    color: var(--cor-texto-claro);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+.project-card-accent {
+    background-color: #1e4775;
+}
+
+.project-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.project-type {
+    color: #bfdbfe;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+}
+
+.project-card .project-status {
+    margin: 0;
+    padding: 3px 9px;
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #dbeafe;
+    font-size: 0.75rem;
+}
+
+.project-card h3 {
+    margin: 0 0 12px;
+    color: var(--cor-texto-claro);
+    font-size: 1.35rem;
+}
+
+.project-card p {
+    color: #dbeafe;
+}
+
+.project-techs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: auto 0 24px;
+    padding-top: 12px;
+}
+
+.project-techs span {
+    padding: 4px 9px;
+    color: #e0edff;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+}
+
+.project-card .project-link {
+    align-self: flex-start;
+    margin-top: auto;
+    background-color: var(--cor-interacao-principal);
+    border-color: var(--cor-interacao-principal);
+}
+
+.project-card .project-link:hover {
+    background-color: #60a5fa;
+    color: var(--cor-marca-primaria);
+}
+
+.projects-note {
+    margin-top: 24px;
+}
+
+/* ============================================
    9. TABELA DE HORÁRIO
    ============================================ */
 
@@ -801,6 +970,22 @@ footer {
     td {
         padding: 6px;
         font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .interest-item {
+        flex-basis: 100%;
+    }
+
+    .projects-showcase {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card-top {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
     }
 }
 
