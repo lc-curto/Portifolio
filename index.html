@@ -2,217 +2,312 @@
 <html lang="pt">
 
 <head>
+    <!-- Define a codificação dos caracteres e adapta a página aos ecrãs -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Lucas Curto.">
 
-    <title>Lucas Curto</title>
-
-    <link rel="icon" href="/images/lc_favicon.png">
+    <!-- Define o título, o ícone e o ficheiro de estilos -->
+    <title>Lucas Curto | Portfólio</title>
+    <link rel="icon" href="images/lc_favicon.png">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Menu de Navegação -->
+    <!-- MENU: cada link leva a uma secção da página -->
     <nav>
-        <a id="home" href="#about">Sobre mim</a> |
-        <a href="#hobbies">Hobbies</a> |
-        <a href="#links">Links favoritos</a> |
-        <a href="#schedule">O meu horário</a> |
-        <a href="#contact">Contacto</a>
+        <a href="#home" class="logo">LC<span>.</span></a>
+        <input type="checkbox" id="menu-toggle">
+
+        <label for="menu-toggle" class="menu-icon">
+            ☰
+        </label>
+        <ul id="menu-links">
+            <li><a href="#about">Sobre mim</a></li>
+            <li><a href="#hobbies">Interesses</a></li>
+            <li><a href="#projects">Projetos</a></li>
+            <li><a href="#links">Links</a></li>
+            <li><a href="#schedule">Horário</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
     </nav>
 
-    <hr>
+    <!-- APRESENTAÇÃO: título, descrição e links de acesso -->
+    <header id="home">
+        <div class="intro">
 
-    <!-- Secção: Sobre mim -->
-    <section id="about">
+            <div class="intro-text">
+                <h1>
+                    Olá, sou o Lucas.<br>
+                    <span>A aprender. A construir.</span>
+                </h1>
 
-        <h1>Sobre mim</h1>
+                <p class="intro-description">
+                    Desenvolvimento de software, lógica, bases de dados
+                    e curiosidade para perceber como as coisas funcionam.
+                </p>
 
-        <!-- Secção: Quem sou eu -->
-        <h2>Quem sou eu</h2>
+                <a href="#projects" class="button">Ver projetos</a>
+                <a href="https://github.com/lc-curto" class="button button-secondary">Visitar GitHub</a>
+            </div>
 
-        <p>
-            O meu nome é Lucas Curto e estou a estudar desenvolvimento
-            de software. Atualmente estou a aprender HTML e outras
-            tecnologias relacionadas com programação.
-        </p>
+            <!-- Exemplo de código HTML apresentado na página -->
 
-        <p>
-            Tenho tenho algum conhecimento de programação mas meu interesse maior é retornar as bases e consolidá-las.
-            Minhas maiores limitações são com certeza todos aspectos do front-end. Tenho mais gosto por back-end e base
-            de dados. Entretanto, considero-me um desenvolvedor full-stack.
-        </p>
+            <div class="code-window">
+                <div class="code-window-header">
+                    <span class="code-dot dot-red"></span>
+                    <span class="code-dot dot-yellow"></span>
+                    <span class="code-dot dot-green"></span>
+                </div>
 
-        <hr>
+                <pre class="code-example"><code><span class="code-purple">const</span> developer = {name: <span class="code-green">"Lucas Curto"</span>,
+                skills: [<span class="code-green">"HTML"</span>, <span class="code-green">"CSS"</span>, <span class="code-green">"C#"</span>],
+                passion: <span class="code-green">"Clean Code"</span>,
+                status: <span class="code-green">"A aprender"</span>
+                };</code></pre>
+            </div>
+        </div>
+    </header>
 
-        <!-- Secção: Hobbies -->
-        <h2 id="hobbies">Os meus hobbies</h2>
+    <!-- CONTEÚDO PRINCIPAL DA PÁGINA -->
+    <main>
 
-        <h3>Os meus interesses</h3>
+        <!-- SECÇÃO SOBRE MIM -->
+        <section id="about">
+            <h2>Um pouco sobre mim</h2>
 
-        <ul>
-            <li>Programação</li>
-            <li>Desenvolvimento Web</li>
-            <li>Tecnologia</li>
-            <li>Aprender novas tecnologias</li>
-        </ul>
+            <!-- Agrupa o texto e o cartão de perfil -->
+            <div class="flex-container">
 
-        <h3>Tarefas a realizar</h3>
+                <div class="flex-item about-text">
+                    <p>
+                        O meu nome é Lucas Curto e estou a estudar
+                        desenvolvimento de software. Atualmente,
+                        estou a aprender HTML e outras tecnologias.
+                    </p>
 
-        <ol>
-            <li>Estudar HTML</li>
-            <li>Praticar Programação</li>
-            <li>Desenvolver projetos</li>
-        </ol>
+                    <p>
+                        Quero consolidar os meus conhecimentos de
+                        programação e evoluir no desenvolvimento Web.
+                    </p>
 
-    </section>
+                    <p>
+                        Tenho especial interesse em back-end e bases
+                        de dados, mas também gosto de desenvolvimento
+                        front-end.
+                    </p>
+                </div>
 
-    <hr>
+                <!-- Fotografia e informações pessoais -->
+                <div class="flex-item profile-card">
+                    <img src="images/perfil.jpeg" alt="Foto de perfil de Lucas Curto">
 
-    <!-- Secção: Imagem -->
-    <section>
+                    <h3>Lucas Curto</h3>
+                    <p>Estudante de desenvolvimento de software</p>
+                </div>
 
-        <h2>Imagem</h2>
+            </div>
+        </section>
 
-        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Avatar representando uma pessoa"
-            width="150">
+        <!-- SECÇÃO DE INTERESSES E LISTA DE TAREFAS -->
+        <section id="hobbies">
+            <h2>Interesses</h2>
+            <p>Áreas que fazem parte do meu percurso.</p>
 
-    </section>
+            <!-- Cada div representa um cartão de interesse -->
+            <div class="flex-container">
 
-    <hr>
+                <div class="flex-item card">
+                    <h3>Programação</h3>
+                    <p>Resolver problemas e desenvolver soluções.</p>
+                </div>
 
-    <!-- Secção: Links favoritos -->
-    <section id="links">
+                <div class="flex-item card">
+                    <h3>Desenvolvimento Web</h3>
+                    <p>Criar páginas Web com HTML e CSS.</p>
+                </div>
 
-        <h2>Links favoritos</h2>
+                <div class="flex-item card">
+                    <h3>Back-end e bases de dados</h3>
+                    <p>Compreender aplicações e organizar informação.</p>
+                </div>
 
-        <ul>
+                <div class="flex-item card">
+                    <h3>Novas tecnologias</h3>
+                    <p>Explorar ferramentas e aprender conceitos novos.</p>
+                </div>
 
-            <li>
-                <a href="https://github.com/lc-curto" target="_blank">
-                    GitHub - Programação e projetos
-                </a>
-            </li>
+            </div>
 
-            <li>
-                <a href="https://coinmarketcap.com/pt-br/" target="_blank">
-                    CoinMarketCap - Criptomoedas e mercado cripto
-                </a>
-            </li>
+            <!-- Lista ordenada: os elementos aparecem numerados -->
+            <h3>Tarefas a realizar</h3>
+            <ol>
+                <li>Estudar HTML</li>
+                <li>Praticar programação</li>
+                <li>Desenvolver projetos</li>
+            </ol>
+        </section>
 
-            <li>
-                <a href="https://www.history.com/" target="_blank">
-                    HISTORY - História e acontecimentos históricos
-                </a>
-            </li>
+        <!-- SECÇÃO DE PROJETOS -->
+        <section id="projects">
+            <h2>Projetos</h2>
+            <p>Alguns dos temas que estou a estudar.</p>
 
-        </ul>
+            <!-- Cartões com a descrição e o estado de cada projeto -->
+            <div class="flex-container">
 
-    </section>
+                <div class="flex-item card">
+                    <h3>Página pessoal</h3>
+                    <p>Criação de uma página Web com HTML e CSS.</p>
+                    <p class="project-status">Em desenvolvimento</p>
+                </div>
 
-    <hr>
+                <div class="flex-item card">
+                    <h3>Exercícios de algoritmia</h3>
+                    <p>Variáveis, condições, ciclos e lógica.</p>
+                    <p class="project-status">Em aprendizagem</p>
+                </div>
 
-    <!-- Secção: Horário -->
-    <section id="schedule">
+                <div class="flex-item card">
+                    <h3>Bases de dados</h3>
+                    <p>Organização e consulta de informação.</p>
+                    <p class="project-status">Área de interesse</p>
+                </div>
 
-        <h2>O meu horário</h2>
+            </div>
 
-        <table border="1">
+            <p class="projects-note">
+                Os projetos serão atualizados à medida que forem desenvolvidos.
+            </p>
+        </section>
 
-            <thead>
-                <tr>
-                    <th>Hora</th>
-                    <th>Segunda</th>
-                    <th>Terça</th>
-                    <th>Quarta</th>
-                    <th>Quinta</th>
-                    <th>Sexta</th>
-                </tr>
-            </thead>
+        <!-- LINKS PARA SITES EXTERNOS -->
+        <section id="links">
+            <h2>Links úteis</h2>
+            <p>Sites relacionados com os meus interesses.</p>
 
-            <tbody align="center">
+            <ul>
+                <li>
+                    <a href="https://github.com/lc-curto">GitHub</a>
+                    — programação e projetos
+                </li>
+                <li>
+                    <a href="https://coinmarketcap.com/pt-br/">CoinMarketCap</a>
+                    — mercado de criptomoedas
+                </li>
+                <li>
+                    <a href="https://www.history.com/">HISTORY</a>
+                    — história
+                </li>
+            </ul>
+        </section>
 
-                <tr>
-                    <td>09:00</td>
-                    <td>Programação Web</td>
-                    <td></td>
-                    <td>Programação Web</td>
-                    <td></td>
-                    <td>Programação Web</td>
-                </tr>
+        <!-- TABELA COM O HORÁRIO SEMANAL -->
+        <section id="schedule">
+            <h2>O meu horário</h2>
+            <p>Horário semanal das atividades de formação.</p>
 
-                <tr>
-                    <td>10:00</td>
-                    <td></td>
-                    <td>Algoritmia</td>
-                    <td></td>
-                    <td>Algoritmia</td>
-                    <td></td>
-                </tr>
+            <div class="table-container">
+                <table>
+                    <!-- Título descritivo da tabela -->
+                    <caption>Horário semanal de formação</caption>
 
-                <tr>
-                    <td>14:00</td>
-                    <td>Base de Dados</td>
-                    <td></td>
-                    <td>Base de Dados</td>
-                    <td></td>
-                    <td>Base de Dados</td>
-                </tr>
+                    <!-- Cabeçalho com os dias da semana -->
+                    <thead>
+                        <tr>
+                            <th>Hora</th>
+                            <th>Segunda</th>
+                            <th>Terça</th>
+                            <th>Quarta</th>
+                            <th>Quinta</th>
+                            <th>Sexta</th>
+                        </tr>
+                    </thead>
 
-                <tr>
-                    <td>15:00</td>
-                    <td></td>
-                    <td>Projeto</td>
-                    <td></td>
-                    <td>Projeto</td>
-                    <td></td>
-                </tr>
+                    <!-- Corpo com as atividades de cada horário -->
+                    <tbody>
+                        <tr>
+                            <th>09:00</th>
+                            <td>Programação Web</td>
+                            <td>—</td>
+                            <td>Programação Web</td>
+                            <td>—</td>
+                            <td>Programação Web</td>
+                        </tr>
 
-            </tbody>
+                        <tr>
+                            <th>10:00</th>
+                            <td>—</td>
+                            <td>Algoritmia</td>
+                            <td>—</td>
+                            <td>Algoritmia</td>
+                            <td>—</td>
+                        </tr>
 
-        </table>
+                        <tr>
+                            <th>14:00</th>
+                            <td>Base de Dados</td>
+                            <td>—</td>
+                            <td>Base de Dados</td>
+                            <td>—</td>
+                            <td>Base de Dados</td>
+                        </tr>
 
-    </section>
+                        <tr>
+                            <th>15:00</th>
+                            <td>—</td>
+                            <td>Projeto</td>
+                            <td>—</td>
+                            <td>Projeto</td>
+                            <td>—</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-    <hr>
+        <!-- FORMULÁRIO DE CONTACTO -->
+        <section id="contact">
+            <h2>Contacto</h2>
+            <p>Deixa-me uma mensagem.</p>
 
-    <!-- Secção: Contacto -->
-    <section id="contact">
+            <!-- Os campos recolhem os dados introduzidos pelo utilizador -->
+            <form action="#" method="get">
 
-        <h2>Contacto</h2>
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" placeholder="O teu nome" required>
+                </div>
 
-        <form>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="O teu email" required>
+                </div>
 
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" required>
+                <div class="form-group">
+                    <label for="subject">Assunto</label>
+                    <input type="text" id="subject" name="subject" placeholder="Assunto da mensagem">
+                </div>
 
-            <br><br>
+                <div class="form-group">
+                    <label for="message">Mensagem</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Escreve a tua mensagem"></textarea>
+                </div>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+                <!-- Botão para submeter o formulário -->
+                <button type="submit">Enviar mensagem</button>
 
-            <br><br>
+            </form>
+        </section>
 
-            <label for="subject">Assunto:</label>
-            <input type="text" id="subject" name="subject">
+    </main>
 
-            <br><br>
-
-            <label for="message">Mensagem:</label>
-            <br>
-            <textarea id="message" name="message" rows="5" cols="30"></textarea>
-
-            <br><br>
-
-            <button type="submit">Enviar</button>
-
-        </form>
-
-    </section>
-
-    <hr>
-
-    <a href="#home">Voltar ao Topo</a>
+    <!-- RODAPÉ DA PÁGINA -->
+    <footer>
+        <p>© 2026 Lucas Curto. Todos os direitos reservados.</p>
+        <a href="#home">Voltar ao topo</a>
+    </footer>
 
 </body>
 
