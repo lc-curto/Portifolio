@@ -16,7 +16,7 @@ Cada `id` identifica uma secção. Os links do menu usam `href="#projects"`, por
 
 ### Por que usaste `class`?
 
-A `class` permite aplicar o mesmo estilo a vários elementos ou identificar um tipo de elemento, como `.project-card` para os dois cartões de projetos.
+A `class` permite aplicar o mesmo estilo a vários elementos ou identificar um tipo de elemento, como `.card` para os dois cartões de projetos.
 
 ### O que faz o `display: grid`?
 
@@ -41,7 +41,7 @@ O objetivo deste trabalho é praticar HTML e CSS básicos. A navegação por ân
 ## Decisões de simplificação
 
 - Removi o menu baseado em `checkbox`, porque ele exigia uma técnica menos direta para uma disciplina introdutória.
-- Removi classes que não eram usadas ou que repetiam regras existentes.
+- Mantive apenas classes simples, como `.container`, `.button`, `.card` e `.status`.
 - Mantive a paleta de cores, os cartões, a tabela, o formulário e a adaptação para telemóvel.
 - Mantive os links dos projetos e o conteúdo principal do portfólio.
 - Agrupei as regras de responsividade numa estrutura menor e mais fácil de explicar.
