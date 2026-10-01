@@ -1,31 +1,12 @@
-
-/* ============================================
-   1. VARIÁVEIS E CONFIGURAÇÕES GERAIS
-   ============================================ */
-
 :root {
-    /* Identidade visual */
-    --cor-marca-primaria: #10243e;
-    --cor-marca-secundaria: #1e3a5f;
-
-    /* Interação e destaque */
-    --cor-interacao-principal: #2563eb;
-    --cor-interacao-hover: #1d4ed8;
-    --cor-destaque-suave: #e0edff;
-
-    /* Fundos */
-    --cor-superficie-pagina: #f3f6fb;
-    --cor-superficie-cartao: #ffffff;
-    --cor-superficie-secundaria: #eaf0f8;
-
-    /* Texto */
-    --cor-texto-principal: #243247;
-    --cor-texto-secundario: #64748b;
-    --cor-texto-claro: #ffffff;
-
-    /* Bordas e sombras */
-    --cor-borda-padrao: #d9e2ef;
-    --cor-sombra: rgba(16, 36, 62, 0.08);
+    --navy: #10243e;
+    --blue: #2563eb;
+    --light-blue: #e0edff;
+    --page: #f3f6fb;
+    --card: #ffffff;
+    --text: #243247;
+    --muted: #64748b;
+    --border: #d9e2ef;
 }
 
 * {
@@ -33,22 +14,16 @@
 }
 
 html {
+    scroll-behavior: smooth;
     scroll-padding-top: 70px;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    html {
-        scroll-behavior: smooth;
-    }
 }
 
 body {
     margin: 0;
-    font-family: system-ui, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.65;
-    background-color: var(--cor-superficie-pagina);
-    color: var(--cor-texto-principal);
+    color: var(--text);
+    background: var(--page);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
 h1,
@@ -58,72 +33,31 @@ h3 {
     line-height: 1.2;
 }
 
+a {
+    color: var(--blue);
+}
+
 img {
     display: block;
     max-width: 100%;
-    height: auto;
 }
 
-a {
-    color: var(--cor-interacao-principal);
-}
-
-.skip-link {
-    position: absolute;
-    top: -50px;
-    left: 20px;
-    z-index: 20;
-    padding: 8px 14px;
-    background-color: var(--cor-texto-claro);
-    color: var(--cor-marca-primaria);
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 0 0 6px 6px;
-}
-
-.skip-link:focus {
-    top: 0;
-}
-
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-    outline: 3px solid var(--cor-interacao-principal);
-    outline-offset: 3px;
-}
-
-/* ============================================
-   2. MENU DE NAVEGAÇÃO
-   ============================================ */
-
+/* Navegação */
 nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px max(20px, calc((100% - 1100px) / 2 + 20px));
+    background: var(--navy);
+    border-bottom: 3px solid var(--blue);
     position: sticky;
     top: 0;
-    z-index: 10;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 8px max(20px, calc((100% - 1100px) / 2 + 20px));
-    background-color: var(--cor-marca-primaria);
-    border-bottom: 2px solid var(--cor-interacao-principal);
-}
-
-#menu-toggle {
-    display: none;
-}
-
-.menu-icon {
-    display: none;
-    color: var(--cor-texto-claro);
-    font-size: 1.8rem;
-    cursor: pointer;
+    z-index: 1;
 }
 
 .logo {
-    color: var(--cor-texto-claro);
+    color: white;
     font-family: Georgia, serif;
     font-size: 1.5rem;
     font-weight: bold;
@@ -137,175 +71,106 @@ nav {
 nav ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 4px;
-    list-style: none;
+    gap: 5px;
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 
-nav li {
-    margin: 0;
-}
-
-nav ul a {
+nav a:not(.logo) {
     display: block;
-    padding: 14px 14px 12px;
+    padding: 10px;
     color: #cbd5e1;
-    font-size: 0.95rem;
     text-decoration: none;
-    border-bottom: 2px solid transparent;
-    transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-nav ul a:hover,
-nav ul a:focus-visible {
-    color: var(--cor-texto-claro);
-    border-bottom-color: #93c5fd;
+nav a:hover,
+nav a:focus {
+    color: white;
 }
 
-/* ============================================
-   3. APRESENTAÇÃO INICIAL
-   ============================================ */
-
+/* Apresentação */
 header {
-    background-color: var(--cor-marca-primaria);
-    color: var(--cor-texto-claro);
-    padding: 0 20px;
-    border-bottom: 3px solid var(--cor-interacao-principal);
+    color: white;
+    background: var(--navy);
+    border-bottom: 3px solid var(--blue);
 }
 
-.intro {
+.hero {
     display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+    grid-template-columns: 1.2fr 0.8fr;
     align-items: center;
-    gap: 48px;
-    width: 100%;
+    gap: 45px;
     max-width: 1100px;
-    margin: 0 auto;
-    padding: 52px 20px;
+    margin: auto;
+    padding: 55px 20px;
 }
 
-.intro-text {
-    min-width: 0;
+.hero h1 {
+    margin: 0 0 18px;
+    font-size: clamp(1.9rem, 5vw, 2.8rem);
 }
 
-.intro h1 {
-    margin: 0 0 16px;
-    font-size: clamp(1.8rem, 5vw, 2.8rem);
-}
-
-.intro h1 span {
-    font-weight: normal;
+.hero h1 span {
     color: #bfdbfe;
+    font-weight: normal;
 }
 
-.intro-description {
+.hero p {
     max-width: 55ch;
-    margin: 0 0 24px;
+    margin: 0 0 25px;
     color: #dbeafe;
-    font-size: 1rem;
+}
+
+.button,
+form button,
+.project-card a {
+    display: inline-block;
+    padding: 11px 20px;
+    color: white;
+    background: var(--blue);
+    border: 1px solid var(--blue);
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .button {
-    display: inline-block;
-    margin: 0 10px 10px 0;
-    padding: 12px 24px;
-    background-color: var(--cor-interacao-principal);
-    color: var(--cor-texto-claro);
-    font-weight: bold;
-    text-decoration: none;
-    border: 2px solid var(--cor-interacao-principal);
-    border-radius: 6px;
-    transition: background-color 0.2s ease;
+    margin: 0 8px 8px 0;
 }
 
-.button:hover {
-    background-color: var(--cor-interacao-hover);
-    border-color: var(--cor-interacao-hover);
+.button:hover,
+form button:hover,
+.project-card a:hover {
+    background: #1d4ed8;
 }
 
-.button-secondary {
-    background-color: transparent;
-    border-color: #ffffff;
-}
-
-.button-secondary:hover {
-    background-color: #ffffff;
-    border-color: #ffffff;
-    color: var(--cor-marca-primaria);
-}
-
-/* ============================================
-   4. JANELA DE CÓDIGO
-   ============================================ */
-
-.code-window {
-    width: 100%;
-    max-width: 380px;
-    min-width: 0;
-    overflow: hidden;
-    background-color: #102440;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 10px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-}
-
-.code-window-header {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    height: 32px;
-    padding: 0 12px;
-    background-color: rgba(0, 0, 0, 0.12);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.code-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-}
-
-.dot-red {
-    background-color: #ef5350;
-}
-
-.dot-yellow {
-    background-color: #fbc02d;
-}
-
-.dot-green {
-    background-color: #4caf50;
-}
-
-.code-example {
-    width: 100%;
-    margin: 0;
-    padding: 16px;
-    overflow-x: auto;
+.button.secondary {
     background: transparent;
-    border: none;
+    border-color: white;
+}
+
+.button.secondary:hover {
+    color: var(--navy);
+    background: white;
+}
+
+.code-box {
+    overflow: auto;
+    margin: 0;
+    padding: 22px;
     color: #dbeafe;
+    background: #0b1a2d;
+    border: 1px solid #38506d;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 12%);
     font-family: Consolas, "Courier New", monospace;
-    font-size: 0.8rem;
-    line-height: 1.7;
-    white-space: pre;
+    font-size: 0.85rem;
 }
 
-.code-purple {
-    color: #c792ea;
-}
-
-.code-green {
-    color: #a5d6a7;
-}
-
-/* ============================================
-   5. CONTEÚDO E SECÇÕES
-   ============================================ */
-
+/* Conteúdo e cartões */
 main {
-    width: 100%;
     max-width: 1100px;
     margin: 32px auto;
     padding: 0 20px;
@@ -314,151 +179,67 @@ main {
 section {
     margin-bottom: 28px;
     padding: 32px;
-    background-color: var(--cor-superficie-cartao);
-    border: 1px solid var(--cor-borda-padrao);
+    background: var(--card);
+    border: 1px solid var(--border);
     border-radius: 12px;
-    box-shadow: 0 4px 14px var(--cor-sombra);
+    box-shadow: 0 4px 14px rgb(16 36 62 / 8%);
 }
 
-section h2 {
-    margin: 0 0 22px;
-    color: var(--cor-marca-primaria);
+h2 {
+    margin: 0 0 20px;
+    color: var(--navy);
     font-size: clamp(1.55rem, 3vw, 1.8rem);
 }
 
-section h2::after {
-    content: "";
+h2::after {
     display: block;
     width: 55px;
     height: 4px;
     margin-top: 8px;
-    background-color: var(--cor-interacao-principal);
+    background: var(--blue);
     border-radius: 2px;
+    content: "";
 }
 
-section h3 {
-    margin: 20px 0 8px;
-    color: var(--cor-marca-secundaria);
+h3 {
+    color: #1e3a5f;
 }
 
 p {
     margin: 0 0 15px;
 }
 
-ul,
-ol {
-    margin: 0 0 20px;
-    padding-left: 25px;
+section > p:not(.label) {
+    color: var(--muted);
 }
 
-li {
-    margin-bottom: 6px;
+.label {
+    margin-bottom: 8px;
+    color: var(--blue);
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
 }
 
-.about-text {
-    max-width: 65ch;
+/* Sobre mim */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 30px;
+    align-items: start;
 }
-
-/* ============================================
-   6. FLEXBOX E CARTÕES
-   ============================================ */
-
-.flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 24px;
-}
-
-.flex-item {
-    flex: 1 1 250px;
-    min-width: 0;
-}
-
-.card {
-    padding: 22px;
-    background-color: var(--cor-superficie-cartao);
-    border: 1px solid var(--cor-borda-padrao);
-    border-left: 4px solid var(--cor-interacao-principal);
-    border-radius: 10px;
-    box-shadow: 0 2px 8px var(--cor-sombra);
-}
-
-.card h3 {
-    margin-top: 0;
-}
-
-.card p:last-child {
-    margin-bottom: 0;
-}
-
-/* Cartões de interesses */
-
-#hobbies .flex-container {
-    align-items: stretch;
-    gap: 20px;
-}
-
-#hobbies .card {
-    display: flex;
-    flex: 1 1 220px;
-    flex-direction: column;
-    min-width: 0;
-}
-
-#hobbies .card h3 {
-    margin-top: 0;
-}
-
-#hobbies .card p {
-    margin-bottom: 0;
-}
-
-.card {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 18px var(--cor-sombra);
-}
-
-/* Lista de tarefas */
-
-.tasks {
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid var(--cor-borda-padrao);
-}
-
-.tasks h3 {
-    margin-top: 0;
-    margin-bottom: 15px;
-}
-
-.tasks ol {
-    margin-bottom: 0;
-}
-
-.tasks li {
-    padding: 5px 0;
-}
-
-/* ============================================
-   7. CARTÃO DE PERFIL
-   ============================================ */
 
 .profile-card {
     text-align: center;
 }
 
 .profile-card img {
-    display: block;
     width: 160px;
     height: 160px;
     margin: 0 auto 15px;
     object-fit: cover;
-    border: 4px solid var(--cor-destaque-suave);
+    border: 4px solid var(--light-blue);
     border-radius: 50%;
 }
 
@@ -466,231 +247,106 @@ li {
     margin: 0;
 }
 
-/* ============================================
-   8. PROJETOS
-   ============================================ */
-
-#projects .flex-container {
-    align-items: stretch;
-    gap: 24px;
-}
-
-#projects .card {
-    display: flex;
-    flex-direction: column;
-}
-
-.project-status {
-    display: inline-block;
-    padding: 3px 12px;
-    background-color: var(--cor-destaque-suave);
-    color: var(--cor-marca-primaria);
-    font-size: 0.9rem;
-    font-weight: bold;
-    border-radius: 999px;
-}
-
-#projects .project-status {
-    align-self: flex-start;
-    margin-top: auto;
-    margin-bottom: 12px;
-}
-
-#projects .project-link {
-    display: inline-block;
-    align-self: flex-start;
-    padding: 9px 14px;
-    background-color: var(--cor-interacao-principal);
-    color: var(--cor-texto-claro);
-    font-weight: 600;
-    text-decoration: none;
-    border: 1px solid var(--cor-interacao-principal);
-    border-radius: 6px;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-#projects .project-link:hover {
-    background-color: var(--cor-interacao-hover);
-    transform: translateY(-2px);
-}
-
-.projects-note {
-    margin: 25px 0 0;
-    color: var(--cor-texto-secundario);
-    font-style: italic;
-}
-
-/* ============================================
-   9. INTERESSES E PROJETOS
-   ============================================ */
-
-.section-heading {
-    max-width: 620px;
-    margin-bottom: 28px;
-}
-
-.section-heading h2 {
-    margin-bottom: 12px;
-}
-
-.section-label {
-    margin-bottom: 8px;
-    color: var(--cor-interacao-principal);
-    font-size: 0.8rem;
-    font-weight: bold;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-}
-
-.section-intro {
-    max-width: 58ch;
-    margin-bottom: 0;
-    color: var(--cor-texto-secundario);
-}
-
-/* Os interesses funcionam como uma lista leve e editorial. */
+/* Interesses */
 .interest-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 0 28px;
-    border-top: 1px solid var(--cor-borda-padrao);
+    margin-top: 25px;
+    border-top: 1px solid var(--border);
 }
 
-.interest-item {
+.interest-list article {
     display: flex;
-    flex: 1 1 42%;
     gap: 18px;
     padding: 22px 0;
-    border-bottom: 1px solid var(--cor-borda-padrao);
+    border-bottom: 1px solid var(--border);
 }
 
-.interest-number {
-    flex: 0 0 auto;
-    color: var(--cor-interacao-principal);
-    font-family: Consolas, "Courier New", monospace;
-    font-size: 0.9rem;
-    font-weight: bold;
+.interest-list article > strong {
+    color: var(--blue);
+    font-family: Consolas, monospace;
 }
 
-.interest-item h3 {
+.interest-list h3 {
     margin: 0 0 6px;
     font-size: 1.15rem;
 }
 
-.interest-item p {
+.interest-list p {
     margin: 0;
-    color: var(--cor-texto-secundario);
+    color: var(--muted);
 }
 
-/* Os projetos mantêm cartões próprios, mas seguem a identidade visual geral. */
-.projects-section {
-    background-color: var(--cor-superficie-cartao);
-    border-color: var(--cor-borda-padrao);
-}
-
-.projects-section h2::after {
-    background-color: var(--cor-interacao-principal);
-}
-
-.projects-section .section-intro,
-.projects-section .projects-note {
-    color: var(--cor-texto-secundario);
-}
-
-.projects-showcase {
+/* Projetos */
+.project-list {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 22px;
+    margin-top: 25px;
 }
 
 .project-card {
     display: flex;
-    min-width: 0;
     flex-direction: column;
     padding: 26px;
-    background-color: var(--cor-superficie-cartao);
-    color: var(--cor-texto-principal);
-    border: 1px solid var(--cor-borda-padrao);
-    border-top: 4px solid var(--cor-interacao-principal);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--blue);
     border-radius: 10px;
-    box-shadow: 0 2px 8px var(--cor-sombra);
+    box-shadow: 0 2px 8px rgb(16 36 62 / 8%);
 }
 
-.project-card-accent {
-    background-color: var(--cor-superficie-secundaria);
-    border-top-color: var(--cor-marca-secundaria);
+.project-card.featured {
+    background: #eaf0f8;
+    border-top-color: #1e3a5f;
 }
 
-.project-card-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    margin-bottom: 24px;
-}
-
-.project-type {
-    color: var(--cor-interacao-principal);
-    font-size: 0.75rem;
+.project-card small {
+    color: var(--blue);
     font-weight: bold;
     letter-spacing: 0.08em;
 }
 
-.project-card .project-status {
-    margin: 0;
+.status {
+    align-self: flex-start;
+    margin: 12px 0 5px;
     padding: 3px 9px;
-    background-color: var(--cor-destaque-suave);
-    color: var(--cor-marca-primaria);
-    font-size: 0.75rem;
+    color: var(--navy);
+    background: var(--light-blue);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: bold;
 }
 
 .project-card h3 {
-    margin: 0 0 12px;
-    color: var(--cor-marca-primaria);
-    font-size: 1.35rem;
+    margin: 8px 0 10px;
 }
 
 .project-card p {
-    color: var(--cor-texto-secundario);
+    color: var(--muted);
 }
 
-.project-techs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: auto 0 24px;
-    padding-top: 12px;
-}
-
-.project-techs span {
-    padding: 4px 9px;
-    color: var(--cor-marca-secundaria);
-    font-size: 0.8rem;
-    border: 1px solid var(--cor-borda-padrao);
-    border-radius: 4px;
-}
-
-.project-card .project-link {
-    align-self: flex-start;
+.project-card .technologies {
     margin-top: auto;
-    background-color: var(--cor-interacao-principal);
-    border-color: var(--cor-interacao-principal);
+    padding-top: 10px;
+    color: #1e3a5f;
+    font-weight: bold;
 }
 
-.project-card .project-link:hover {
-    background-color: var(--cor-interacao-hover);
-    color: var(--cor-texto-claro);
+.project-card a {
+    align-self: flex-start;
 }
 
-.projects-note {
-    margin-top: 24px;
+/* Links e tabela */
+ul {
+    padding-left: 25px;
 }
 
-/* ============================================
-   9. TABELA DE HORÁRIO
-   ============================================ */
+li {
+    margin-bottom: 8px;
+}
 
-.table-container {
+.table-wrapper {
     overflow-x: auto;
 }
 
@@ -698,13 +354,11 @@ table {
     width: 100%;
     min-width: 600px;
     border-collapse: collapse;
-    background-color: var(--cor-superficie-cartao);
 }
 
 caption {
     padding-bottom: 8px;
-    color: var(--cor-texto-secundario);
-    font-size: 0.9rem;
+    color: var(--muted);
     text-align: left;
 }
 
@@ -712,35 +366,27 @@ th,
 td {
     padding: 12px;
     text-align: left;
-    border: 1px solid var(--cor-borda-padrao);
+    border: 1px solid var(--border);
 }
 
 thead th {
-    background-color: var(--cor-marca-secundaria);
-    color: var(--cor-texto-claro);
+    color: white;
+    background: #1e3a5f;
 }
 
 tbody th {
-    background-color: var(--cor-destaque-suave);
-    color: var(--cor-marca-primaria);
+    color: var(--navy);
+    background: var(--light-blue);
 }
 
 tbody tr:nth-child(even) td {
-    background-color: var(--cor-superficie-secundaria);
+    background: #eaf0f8;
 }
 
-tbody tr:hover td {
-    background-color: var(--cor-destaque-suave);
-}
-
-/* ============================================
-   10. FORMULÁRIO DE CONTACTO
-   ============================================ */
-
-#contact form {
-    width: 100%;
+/* Formulário */
+form {
     max-width: 600px;
-    margin: 0 auto;
+    margin: auto;
 }
 
 label {
@@ -753,18 +399,12 @@ input,
 textarea {
     display: block;
     width: 100%;
-    padding: 12px;
-    font-family: inherit;
-    font-size: 1rem;
-    color: var(--cor-texto-principal);
-    background-color: var(--cor-superficie-cartao);
-    border: 1px solid var(--cor-borda-padrao);
+    padding: 11px;
+    color: var(--text);
+    background: white;
+    border: 1px solid var(--border);
     border-radius: 6px;
-}
-
-input:focus,
-textarea:focus {
-    border-color: var(--cor-interacao-principal);
+    font: inherit;
 }
 
 textarea {
@@ -773,227 +413,81 @@ textarea {
 
 form button {
     margin-top: 20px;
-    padding: 12px 24px;
-    background-color: var(--cor-interacao-principal);
-    color: var(--cor-texto-claro);
     font-size: 1rem;
-    font-weight: bold;
-    border: 1px solid var(--cor-interacao-principal);
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
 }
 
-form button:hover {
-    background-color: var(--cor-interacao-hover);
-}
-
-/* ============================================
-   10. FOOTER   
-   ============================================ */
+/* Rodapé */
 footer {
     padding: 20px;
+    color: white;
+    background: var(--navy);
     text-align: center;
-    background-color: var(--cor-marca-primaria);
-    color: var(--cor-texto-claro);
     font-size: 0.9rem;
 }
-/* ============================================
-   12. RESPONSIVIDADE
-   ============================================ */
 
-/* Tablets */
-
-@media (max-width: 800px) {
-    .intro {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 28px;
-        padding: 35px 20px;
-    }
-
-    .intro h1 {
-        font-size: clamp(1.8rem, 6vw, 2.4rem);
-    }
-
-    .code-window {
-        max-width: 100%;
-    }
+footer p {
+    margin-bottom: 5px;
 }
 
-/* Telemóveis */
+footer a {
+    color: #bfdbfe;
+}
 
-@media (max-width: 600px) {
-    nav {
-        position: relative;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .menu-icon {
-        display: block;
-    }
-
-    nav ul {
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        width: 100%;
-        padding: 8px 0 0;
-        margin: 0;
-    }
-
-    #menu-toggle:checked ~ ul {
-        display: flex;
-    }
-
-    nav ul a {
-        display: block;
-        padding: 12px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
+/* Em ecrãs mais pequenos, as colunas passam a uma só coluna. */
+@media (max-width: 700px) {
     html {
         scroll-padding-top: 0;
     }
 
-    header {
-        padding: 0;
+    nav {
+        position: static;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
     }
 
-    .intro {
+    nav ul {
         width: 100%;
-        padding: 28px 20px;
     }
 
-    .intro-text {
-        width: 100%;
-        min-width: 0;
+    nav a:not(.logo) {
+        padding: 7px 8px;
     }
 
-    .intro h1 {
-        font-size: clamp(1.6rem, 6vw, 2.2rem);
-        line-height: 1.2;
-        overflow-wrap: break-word;
+    .hero,
+    .about-content,
+    .interest-list,
+    .project-list {
+        grid-template-columns: 1fr;
     }
 
-    .intro-description {
-        max-width: 100%;
-        font-size: 0.95rem;
-        line-height: 1.6;
-        overflow-wrap: break-word;
-    }
-
-    .code-window {
-        display: none;
+    .hero {
+        gap: 30px;
+        padding: 35px 20px;
     }
 
     main {
-        width: 100%;
-        max-width: 100%;
         margin: 18px auto;
         padding: 0 12px;
     }
 
     section {
-        margin-bottom: 18px;
-        padding: 20px;
-        border-radius: 10px;
+        padding: 22px;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero h1 {
+        font-size: 1.7rem;
     }
 
-    section h2 {
-        font-size: 1.5rem;
+    section {
+        padding: 18px;
     }
 
     th,
     td {
         padding: 8px;
         font-size: 0.9rem;
-    }
-
-    #about .flex-container {
-        flex-direction: column;
-    }
-
-    #about .profile-card {
-        order: -1;
-        width: 100%;
-        min-width: 0;
-    }
-
-    #about .about-text {
-        order: 0;
-        width: 100%;
-        min-width: 0;
-    }
-
-    #projects .flex-container {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    #projects .card {
-        width: 100%;
-    }
-
-    #projects .project-link {
-        max-width: 100%;
-    }
-
-    #contact form {
-        max-width: 100%;
-    }
-}
-
-/* Telemóveis muito estreitos */
-
-@media (max-width: 360px) {
-    .intro {
-        padding: 22px 15px;
-    }
-
-    .intro h1 {
-        font-size: 1.5rem;
-    }
-
-    .intro-description {
-        font-size: 0.9rem;
-    }
-
-    section {
-        padding: 15px;
-    }
-
-    th,
-    td {
-        padding: 6px;
-        font-size: 0.8rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .interest-item {
-        flex-basis: 100%;
-    }
-
-    .projects-showcase {
-        grid-template-columns: 1fr;
-    }
-
-    .project-card-top {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 8px;
-    }
-}
-
-/* Respeita a preferência por menos animações */
-
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-        transform: none !important;
     }
 }

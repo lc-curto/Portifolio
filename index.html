@@ -2,32 +2,19 @@
 <html lang="pt">
 
 <head>
-    <!-- Define a codificação dos caracteres e adapta a página aos ecrãs -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfólio de Lucas Curto.">
-
-    <!-- Define o título, o ícone e o ficheiro de estilos -->
     <title>Lucas Curto | Portfólio</title>
     <link rel="icon" href="images/lc_favicon.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-    <a class="skip-link" href="#main-content">Saltar para o conteúdo principal</a>
-
-    <!-- MENU: cada link leva a uma secção da página -->
-    <nav aria-label="Navegação principal">
+    <!-- Navegação para as principais secções da página -->
+    <nav>
         <a href="#home" class="logo">LC<span>.</span></a>
-
-        <input type="checkbox" id="menu-toggle">
-
-        <label for="menu-toggle" class="menu-icon" aria-label="Abrir menu de navegação">
-            ☰
-        </label>
-
-        <ul id="menu-links">
+        <ul>
             <li><a href="#about">Sobre mim</a></li>
             <li><a href="#hobbies">Interesses</a></li>
             <li><a href="#projects">Projetos</a></li>
@@ -37,307 +24,137 @@
         </ul>
     </nav>
 
-    <!-- APRESENTAÇÃO -->
+    <!-- Apresentação inicial -->
     <header id="home">
-        <div class="intro">
-
-            <div class="intro-text">
-
-                <h1>
-                    Olá, sou o Lucas Curto.<br>
-                    <span>A aprender. A construir.</span>
-                </h1>
-
-                <p class="intro-description">
-                    Desenvolvimento de software, lógica, bases de dados
-                    e curiosidade para perceber como as coisas funcionam.
-                </p>
-
+        <div class="hero">
+            <div>
+                <h1>Olá, sou o Lucas Curto.<br><span>A aprender. A construir.</span></h1>
+                <p>Desenvolvimento de software, lógica, bases de dados e curiosidade para perceber como as coisas funcionam.</p>
                 <a href="#projects" class="button">Ver projetos</a>
-
-                <a href="https://github.com/lc-curto" target="_blank" rel="noopener noreferrer" class="button button-secondary">
-                    Visitar GitHub
-                </a>
+                <a href="https://github.com/lc-curto" target="_blank" rel="noopener noreferrer" class="button secondary">Visitar GitHub</a>
             </div>
 
-            <!-- Exemplo de código apresentado na página -->
-            <div class="code-window">
-                <div class="code-window-header">
-                    <span class="code-dot dot-red"></span>
-                    <span class="code-dot dot-yellow"></span>
-                    <span class="code-dot dot-green"></span>
-                </div>
-
-                <pre class="code-example"><code><span class="code-purple">const</span> developer = {name: <span class="code-green">"Lucas Curto"</span>,
-                skills: [<span class="code-green">"HTML"</span>, <span class="code-green">"CSS"</span>, <span class="code-green">"C#"</span>],
-                passion: <span class="code-green">"Clean Code"</span>,
-                status: <span class="code-green">"A aprender"</span>
-                };</code></pre>
-            </div>
-
+            <!-- Um pequeno exemplo de código como elemento visual -->
+            <pre class="code-box"><code>const developer = {
+  name: "Lucas Curto",
+  skills: ["HTML", "CSS", "C#"],
+  status: "A aprender"
+};</code></pre>
         </div>
     </header>
 
-    <!-- CONTEÚDO PRINCIPAL -->
-    <main id="main-content">
-
-
-        <!-- SECÇÃO SOBRE MIM -->
+    <main>
         <section id="about">
             <h2>Um pouco sobre mim</h2>
-
-            <div class="flex-container">
-
-                <div class="flex-item about-text">
-                    <p>
-                        Sou Lucas Curto, estudante de Desenvolvimento de Software,
-                        com interesse em criar aplicações web e sistemas de gestão.
-                    </p>
-
-                    <p>
-                        Tenho conhecimentos de <strong>HTML e CSS</strong> e estou a
-                        desenvolver competências em <strong>C# e .NET</strong>,
-                        através de exercícios práticos e projetos pessoais.
-                        Estou também a explorar tecnologias como
-                        <strong>Python, FastAPI, React e TypeScript</strong>.
-                    </p>
-
-                    <p>
-                        Entre os meus projetos, destaco o
-                        <strong>Distribution Hub</strong>, uma plataforma de gestão
-                        comercial em desenvolvimento, com uma API e uma aplicação web.
-                    </p>
-
-                    <p>
-                        Ao longo da minha formação, quero aprofundar conhecimentos em
-                        <strong>bases de dados SQL e NoSQL, programação orientada a
-                            objetos, desenvolvimento web, frameworks, APIs, padrões de
-                            desenho e qualidade de software</strong>.
-                        Pretendo aplicar estes conhecimentos na construção de
-                        aplicações completas e funcionais.
-                    </p>
+            <div class="about-content">
+                <div>
+                    <p>Sou Lucas Curto, estudante de Desenvolvimento de Software, com interesse em criar aplicações web e sistemas de gestão.</p>
+                    <p>Tenho conhecimentos de <strong>HTML e CSS</strong> e estou a desenvolver competências em <strong>C# e .NET</strong>, através de exercícios práticos e projetos pessoais. Estou também a explorar tecnologias como <strong>Python, FastAPI, React e TypeScript</strong>.</p>
+                    <p>Entre os meus projetos, destaco o <strong>Distribution Hub</strong>, uma plataforma de gestão comercial em desenvolvimento, com uma API e uma aplicação web.</p>
+                    <p>Ao longo da minha formação, quero aprofundar conhecimentos em <strong>bases de dados, programação orientada a objetos, desenvolvimento web, APIs e qualidade de software</strong>.</p>
                 </div>
 
-                <!-- Fotografia e informações pessoais -->
-                <div class="flex-item profile-card">
-                    <img src="images/perfil.jpeg" alt="Foto de perfil de Lucas Curto" loading="lazy">
-
+                <div class="profile-card">
+                    <img src="images/perfil.jpeg" alt="Foto de perfil de Lucas Curto">
                     <h3>Lucas Curto</h3>
                     <p>Estudante de Desenvolvimento de Software</p>
                 </div>
-
             </div>
         </section>
 
-        <!-- SECÇÃO DE INTERESSES -->
-        <section id="hobbies" class="interests-section">
-            <div class="section-heading">
-                <p class="section-label">O que me motiva</p>
-                <h2>Interesses</h2>
-                <p class="section-intro">Áreas que despertam a minha curiosidade e fazem parte do meu percurso.</p>
-            </div>
+        <section id="hobbies">
+            <p class="label">O que me motiva</p>
+            <h2>Interesses</h2>
+            <p>Áreas que despertam a minha curiosidade e fazem parte do meu percurso.</p>
 
             <div class="interest-list">
-                <article class="interest-item">
-                    <span class="interest-number">01</span>
-                    <div>
-                        <h3>Programação</h3>
-                        <p>Desenvolver soluções, resolver problemas e aprender lógica de programação.</p>
-                    </div>
-                </article>
-
-                <article class="interest-item">
-                    <span class="interest-number">02</span>
-                    <div>
-                        <h3>Desenvolvimento Web</h3>
-                        <p>Criar páginas Web organizadas, acessíveis e visualmente apelativas com HTML e CSS.</p>
-                    </div>
-                </article>
-
-                <article class="interest-item">
-                    <span class="interest-number">03</span>
-                    <div>
-                        <h3>Back-end e dados</h3>
-                        <p>Compreender o funcionamento das aplicações e a organização dos dados.</p>
-                    </div>
-                </article>
-
-                <article class="interest-item">
-                    <span class="interest-number">04</span>
-                    <div>
-                        <h3>Novas tecnologias</h3>
-                        <p>Explorar ferramentas e descobrir novas formas de desenvolver soluções.</p>
-                    </div>
-                </article>
+                <article><strong>01</strong><div><h3>Programação</h3><p>Desenvolver soluções, resolver problemas e aprender lógica de programação.</p></div></article>
+                <article><strong>02</strong><div><h3>Desenvolvimento Web</h3><p>Criar páginas Web organizadas, acessíveis e visualmente apelativas com HTML e CSS.</p></div></article>
+                <article><strong>03</strong><div><h3>Back-end e dados</h3><p>Compreender o funcionamento das aplicações e a organização dos dados.</p></div></article>
+                <article><strong>04</strong><div><h3>Novas tecnologias</h3><p>Explorar ferramentas e descobrir novas formas de desenvolver soluções.</p></div></article>
             </div>
         </section>
 
-        <!-- SECÇÃO DE PROJETOS -->
-        <section id="projects" class="projects-section">
-            <div class="section-heading projects-heading">
-                <p class="section-label">Em construção</p>
-                <h2>Projetos</h2>
-                <p class="section-intro">Projetos que demonstram o meu percurso no desenvolvimento de software.</p>
-            </div>
+        <section id="projects">
+            <p class="label">Em construção</p>
+            <h2>Projetos</h2>
+            <p>Projetos que demonstram o meu percurso no desenvolvimento de software.</p>
 
-            <div class="projects-showcase">
+            <div class="project-list">
                 <article class="project-card">
-                    <div class="project-card-top">
-                        <span class="project-type">API · BACK-END</span>
-                        <span class="project-status">Em desenvolvimento</span>
-                    </div>
+                    <small>API · BACK-END</small>
+                    <span class="status">Em desenvolvimento</span>
                     <h3>Distribution Hub API</h3>
                     <p>API para apoiar a gestão comercial de empresas, com o objetivo de organizar operações comerciais.</p>
-                    <div class="project-techs" aria-label="Tecnologias utilizadas">
-                        <span>Python</span>
-                        <span>FastAPI</span>
-                    </div>
-                    <a href="https://github.com/lc-curto/distribution-hub-api" target="_blank" rel="noopener noreferrer" class="project-link">Ver projeto <span aria-hidden="true">→</span></a>
+                    <p class="technologies">Python · FastAPI</p>
+                    <a href="https://github.com/lc-curto/distribution-hub-api" target="_blank" rel="noopener noreferrer">Ver projeto →</a>
                 </article>
 
-                <article class="project-card project-card-accent">
-                    <div class="project-card-top">
-                        <span class="project-type">INTERFACE · FRONT-END</span>
-                        <span class="project-status">Em desenvolvimento</span>
-                    </div>
+                <article class="project-card featured">
+                    <small>INTERFACE · FRONT-END</small>
+                    <span class="status">Em desenvolvimento</span>
                     <h3>Distribution Hub Web</h3>
                     <p>Interface Web para um sistema de gestão comercial, pensada para facilitar a interação dos utilizadores com a aplicação.</p>
-                    <div class="project-techs" aria-label="Tecnologias utilizadas">
-                        <span>React</span>
-                        <span>TypeScript</span>
-                        <span>Vite</span>
-                    </div>
-                    <a href="https://github.com/lc-curto/distribution-hub-web" target="_blank" rel="noopener noreferrer" class="project-link">Ver projeto <span aria-hidden="true">→</span></a>
+                    <p class="technologies">React · TypeScript · Vite</p>
+                    <a href="https://github.com/lc-curto/distribution-hub-web" target="_blank" rel="noopener noreferrer">Ver projeto →</a>
                 </article>
             </div>
-
-            <p class="projects-note">Os projetos serão atualizados à medida que forem desenvolvidos.</p>
+            <p><em>Os projetos serão atualizados à medida que forem desenvolvidos.</em></p>
         </section>
 
-        <!-- LINKS PARA SITES EXTERNOS -->
         <section id="links">
             <h2>Links úteis</h2>
             <p>Sites relacionados com os meus interesses.</p>
-
             <ul>
-                <li>
-                    <a href="https://github.com/lc-curto">GitHub</a>
-                    — programação e projetos
-                </li>
-
-                <li>
-                    <a href="https://coinmarketcap.com/pt-br/">CoinMarketCap</a>
-                    — mercado de criptomoedas
-                </li>
-
-                <li>
-                    <a href="https://www.history.com/">HISTORY</a>
-                    — história
-                </li>
+                <li><a href="https://github.com/lc-curto">GitHub</a> — programação e projetos</li>
+                <li><a href="https://coinmarketcap.com/pt-br/">CoinMarketCap</a> — mercado de criptomoedas</li>
+                <li><a href="https://www.history.com/">HISTORY</a> — história</li>
             </ul>
         </section>
 
-        <!-- TABELA COM O HORÁRIO SEMANAL -->
         <section id="schedule">
             <h2>O meu horário</h2>
             <p>Horário semanal das atividades de formação.</p>
-
-            <div class="table-container">
+            <div class="table-wrapper">
                 <table>
                     <caption>Horário semanal de formação</caption>
-
                     <thead>
-                        <tr>
-                            <th>Hora</th>
-                            <th>Segunda</th>
-                            <th>Terça</th>
-                            <th>Quarta</th>
-                            <th>Quinta</th>
-                            <th>Sexta</th>
-                        </tr>
+                        <tr><th>Hora</th><th>Segunda</th><th>Terça</th><th>Quarta</th><th>Quinta</th><th>Sexta</th></tr>
                     </thead>
-
                     <tbody>
-                        <tr>
-                            <th>09:00</th>
-                            <td>Programação Web</td>
-                            <td>—</td>
-                            <td>Programação Web</td>
-                            <td>—</td>
-                            <td>Programação Web</td>
-                        </tr>
-
-                        <tr>
-                            <th>10:00</th>
-                            <td>—</td>
-                            <td>Algoritmia</td>
-                            <td>—</td>
-                            <td>Algoritmia</td>
-                            <td>—</td>
-                        </tr>
-
-                        <tr>
-                            <th>14:00</th>
-                            <td>Base de Dados</td>
-                            <td>—</td>
-                            <td>Base de Dados</td>
-                            <td>—</td>
-                            <td>Base de Dados</td>
-                        </tr>
-
-                        <tr>
-                            <th>15:00</th>
-                            <td>—</td>
-                            <td>Projeto</td>
-                            <td>—</td>
-                            <td>Projeto</td>
-                            <td>—</td>
-                        </tr>
+                        <tr><th>09:00</th><td>Programação Web</td><td>—</td><td>Programação Web</td><td>—</td><td>Programação Web</td></tr>
+                        <tr><th>10:00</th><td>—</td><td>Algoritmia</td><td>—</td><td>Algoritmia</td><td>—</td></tr>
+                        <tr><th>14:00</th><td>Base de Dados</td><td>—</td><td>Base de Dados</td><td>—</td><td>Base de Dados</td></tr>
+                        <tr><th>15:00</th><td>—</td><td>Projeto</td><td>—</td><td>Projeto</td><td>—</td></tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <!-- FORMULÁRIO DE CONTACTO -->
         <section id="contact">
             <h2>Contacto</h2>
             <p>Deixa-me uma mensagem.</p>
-
             <form action="#" method="get">
+                <label for="name">Nome</label>
+                <input type="text" id="name" name="name" placeholder="O teu nome" required>
 
-                <div class="form-group">
-                    <label for="name">Nome</label>
-                    <input type="text" id="name" name="name" placeholder="O teu nome" required>
-                </div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="O teu email" required>
 
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="O teu email" required>
-                </div>
+                <label for="subject">Assunto</label>
+                <input type="text" id="subject" name="subject" placeholder="Assunto da mensagem">
 
-                <div class="form-group">
-                    <label for="subject">Assunto</label>
-                    <input type="text" id="subject" name="subject" placeholder="Assunto da mensagem">
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Mensagem</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Escreve a tua mensagem"></textarea>
-                </div>
+                <label for="message">Mensagem</label>
+                <textarea id="message" name="message" rows="5" placeholder="Escreve a tua mensagem"></textarea>
 
                 <button type="submit">Enviar mensagem</button>
-
             </form>
         </section>
-
     </main>
 
-    <!-- RODAPÉ DA PÁGINA -->
     <footer>
         <p>© 2026 Lucas Curto. Todos os direitos reservados.</p>
         <a href="#home">Voltar ao topo</a>
     </footer>
-
 </body>
-
 </html>
