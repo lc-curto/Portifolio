@@ -420,4 +420,7 @@ footer a {
     section {
         padding: 20px;
     }
+    .code {
+        display: none;
+    }
 }
