@@ -18,11 +18,13 @@
     <!-- MENU: cada link leva a uma secção da página -->
     <nav>
         <a href="#home" class="logo">LC<span>.</span></a>
+
         <input type="checkbox" id="menu-toggle">
 
         <label for="menu-toggle" class="menu-icon">
             ☰
         </label>
+
         <ul id="menu-links">
             <li><a href="#about">Sobre mim</a></li>
             <li><a href="#hobbies">Interesses</a></li>
@@ -33,7 +35,7 @@
         </ul>
     </nav>
 
-    <!-- APRESENTAÇÃO: título, descrição e links de acesso -->
+    <!-- APRESENTAÇÃO -->
     <header id="home">
         <div class="intro">
 
@@ -49,11 +51,13 @@
                 </p>
 
                 <a href="#projects" class="button">Ver projetos</a>
-                <a href="https://github.com/lc-curto" target="_blank" class="button button-secondary">Visitar GitHub</a>
+
+                <a href="https://github.com/lc-curto" target="_blank" class="button button-secondary">
+                    Visitar GitHub
+                </a>
             </div>
 
-            <!-- Exemplo de código HTML apresentado na página -->
-
+            <!-- Exemplo de código apresentado na página -->
             <div class="code-window">
                 <div class="code-window-header">
                     <span class="code-dot dot-red"></span>
@@ -67,112 +71,202 @@
                 status: <span class="code-green">"A aprender"</span>
                 };</code></pre>
             </div>
+
         </div>
     </header>
 
-    <!-- CONTEÚDO PRINCIPAL DA PÁGINA -->
+    <!-- CONTEÚDO PRINCIPAL -->
     <main>
+
 
         <!-- SECÇÃO SOBRE MIM -->
         <section id="about">
             <h2>Um pouco sobre mim</h2>
 
-            <!-- Agrupa o texto e o cartão de perfil -->
             <div class="flex-container">
 
                 <div class="flex-item about-text">
                     <p>
-                        O meu nome é Lucas Curto e estou a estudar
-                        desenvolvimento de software. Atualmente,
-                        estou a aprender HTML e outras tecnologias.
+                        Sou Lucas Curto, estudante de Desenvolvimento de Software,
+                        com interesse em criar aplicações web e sistemas de gestão.
                     </p>
 
                     <p>
-                        Quero consolidar os meus conhecimentos de
-                        programação e evoluir no desenvolvimento Web.
+                        Tenho conhecimentos de <strong>HTML e CSS</strong> e estou a
+                        desenvolver competências em <strong>C# e .NET</strong>,
+                        através de exercícios práticos e projetos pessoais.
+                        Estou também a explorar tecnologias como
+                        <strong>Python, FastAPI, React e TypeScript</strong>.
                     </p>
 
                     <p>
-                        Tenho especial interesse em back-end e bases
-                        de dados, mas também gosto de desenvolvimento
-                        front-end.
+                        Entre os meus projetos, destaco o
+                        <strong>Distribution Hub</strong>, uma plataforma de gestão
+                        comercial em desenvolvimento, com uma API e uma aplicação web.
+                    </p>
+
+                    <p>
+                        Ao longo da minha formação, quero aprofundar conhecimentos em
+                        <strong>bases de dados SQL e NoSQL, programação orientada a
+                            objetos, desenvolvimento web, frameworks, APIs, padrões de
+                            desenho e qualidade de software</strong>.
+                        Pretendo aplicar estes conhecimentos na construção de
+                        aplicações completas e funcionais.
                     </p>
                 </div>
 
                 <!-- Fotografia e informações pessoais -->
                 <div class="flex-item profile-card">
-                    <img src="images/perfil.jpeg" alt="Foto de perfil de Lucas Curto">
+                    <img src="images/perfil.jpeg" alt="Fotografia de Lucas Curto">
 
                     <h3>Lucas Curto</h3>
-                    <p>Estudante de desenvolvimento de software</p>
+                    <p>Estudante de Desenvolvimento de Software</p>
                 </div>
 
             </div>
         </section>
 
-        <!-- SECÇÃO DE INTERESSES E LISTA DE TAREFAS -->
+        <!-- SECÇÃO DE INTERESSES -->
         <section id="hobbies">
             <h2>Interesses</h2>
-            <p>Áreas que fazem parte do meu percurso.</p>
+            <p>Áreas que despertam a minha curiosidade e fazem parte do meu percurso.</p>
 
-            <!-- Cada div representa um cartão de interesse -->
             <div class="flex-container">
 
                 <div class="flex-item card">
                     <h3>Programação</h3>
-                    <p>Resolver problemas e desenvolver soluções.</p>
+                    <p>
+                        Desenvolver soluções, resolver problemas
+                        e aprender lógica de programação.
+                    </p>
                 </div>
 
                 <div class="flex-item card">
                     <h3>Desenvolvimento Web</h3>
-                    <p>Criar páginas Web com HTML e CSS.</p>
+                    <p>
+                        Criar páginas Web utilizando HTML
+                        e CSS.
+                    </p>
                 </div>
 
                 <div class="flex-item card">
                     <h3>Back-end e bases de dados</h3>
-                    <p>Compreender aplicações e organizar informação.</p>
+                    <p>
+                        Compreender o funcionamento das aplicações
+                        e a organização dos dados.
+                    </p>
                 </div>
 
                 <div class="flex-item card">
                     <h3>Novas tecnologias</h3>
-                    <p>Explorar ferramentas e aprender conceitos novos.</p>
+                    <p>
+                        Explorar ferramentas, conhecer tecnologias
+                        e aprender novas formas de desenvolver soluções.
+                    </p>
                 </div>
 
             </div>
-
-            <!-- Lista ordenada: os elementos aparecem numerados -->
-            <h3>Tarefas a realizar</h3>
-            <ol>
-                <li>Estudar HTML</li>
-                <li>Praticar programação</li>
-                <li>Desenvolver projetos</li>
-            </ol>
         </section>
 
         <!-- SECÇÃO DE PROJETOS -->
         <section id="projects">
             <h2>Projetos</h2>
-            <p>Alguns dos temas que estou a estudar.</p>
 
-            <!-- Cartões com a descrição e o estado de cada projeto -->
+            <p>
+                Projetos que demonstram o meu percurso
+                no desenvolvimento de software.
+            </p>
+
             <div class="flex-container">
 
-                <div class="flex-item card">
-                    <h3>Página pessoal</h3>
-                    <p>Criação de uma página Web com HTML e CSS.</p>
+                <!-- PROJETO 1: PORTFÓLIO -->
+                <!-- <div class="flex-item card">
+                    <h3>Portfólio pessoal</h3>
+
+                    <p>
+                        Site pessoal criado para apresentar o meu percurso,
+                        os meus conhecimentos e os projetos que desenvolvo.
+                    </p>
+
+                    <p><strong>Tecnologias utilizadas:</strong></p>
+
+                    <p>
+                        HTML — estrutura e organização do conteúdo da página.
+                    </p>
+
+                    <p>
+                        CSS — cores, fontes, espaçamentos e apresentação visual.
+                    </p>
+
                     <p class="project-status">Em desenvolvimento</p>
+
+                    <a href="https://github.com/lc-curto/Portifolio"
+                       target="_blank"
+                       class="project-link">
+                        Ver projeto →
+                    </a>
+                </div> -->
+
+                <!-- PROJETO 2: API -->
+                <div class="flex-item card">
+                    <h3>Distribution Hub API</h3>
+
+                    <p>
+                        API para apoiar a gestão comercial de empresas,
+                        com o objetivo de organizar operações comerciais.
+                    </p>
+
+                    <p><strong>Tecnologias utilizadas:</strong></p>
+
+                    <p>
+                        Python — linguagem de programação utilizada
+                        no desenvolvimento da aplicação.
+                    </p>
+
+                    <p>
+                        FastAPI — framework utilizado para criar
+                        os endpoints da API.
+                    </p>
+
+                    <p class="project-status">Em desenvolvimento</p>
+
+                    <a href="https://github.com/lc-curto/distribution-hub-api" target="_blank" class="project-link">
+                        Ver projeto →
+                    </a>
                 </div>
 
+                <!-- PROJETO 3: INTERFACE WEB -->
                 <div class="flex-item card">
-                    <h3>Exercícios de algoritmia</h3>
-                    <p>Variáveis, condições, ciclos e lógica.</p>
-                    <p class="project-status">Em aprendizagem</p>
-                </div>
+                    <h3>Distribution Hub Web</h3>
 
-                <div class="flex-item card">
-                    <h3>Bases de dados</h3>
-                    <p>Organização e consulta de informação.</p>
-                    <p class="project-status">Área de interesse</p>
+                    <p>
+                        Interface Web para um sistema de gestão comercial,
+                        pensada para facilitar a interação dos utilizadores
+                        com a aplicação.
+                    </p>
+
+                    <p><strong>Tecnologias utilizadas:</strong></p>
+
+                    <p>
+                        React — biblioteca utilizada para construir
+                        interfaces através de componentes.
+                    </p>
+
+                    <p>
+                        TypeScript — linguagem que acrescenta tipagem
+                        ao JavaScript e ajuda a identificar erros.
+                    </p>
+
+                    <p>
+                        Vite — ferramenta utilizada para executar
+                        o projeto durante o desenvolvimento.
+                    </p>
+
+                    <p class="project-status">Em desenvolvimento</p>
+
+                    <a href="https://github.com/lc-curto/distribution-hub-web" target="_blank" class="project-link">
+                        Ver projeto →
+                    </a>
                 </div>
 
             </div>
@@ -192,10 +286,12 @@
                     <a href="https://github.com/lc-curto">GitHub</a>
                     — programação e projetos
                 </li>
+
                 <li>
                     <a href="https://coinmarketcap.com/pt-br/">CoinMarketCap</a>
                     — mercado de criptomoedas
                 </li>
+
                 <li>
                     <a href="https://www.history.com/">HISTORY</a>
                     — história
@@ -206,14 +302,12 @@
         <!-- TABELA COM O HORÁRIO SEMANAL -->
         <section id="schedule">
             <h2>O meu horário</h2>
-            <p>Horário semanal das atividades de formação. Teste</p>
+            <p>Horário semanal das atividades de formação.</p>
 
             <div class="table-container">
                 <table>
-                    <!-- Título descritivo da tabela -->
                     <caption>Horário semanal de formação</caption>
 
-                    <!-- Cabeçalho com os dias da semana -->
                     <thead>
                         <tr>
                             <th>Hora</th>
@@ -225,7 +319,6 @@
                         </tr>
                     </thead>
 
-                    <!-- Corpo com as atividades de cada horário -->
                     <tbody>
                         <tr>
                             <th>09:00</th>
@@ -272,7 +365,6 @@
             <h2>Contacto</h2>
             <p>Deixa-me uma mensagem.</p>
 
-            <!-- Os campos recolhem os dados introduzidos pelo utilizador -->
             <form action="#" method="get">
 
                 <div class="form-group">
@@ -295,7 +387,6 @@
                     <textarea id="message" name="message" rows="5" placeholder="Escreve a tua mensagem"></textarea>
                 </div>
 
-                <!-- Botão para submeter o formulário -->
                 <button type="submit">Enviar mensagem</button>
 
             </form>

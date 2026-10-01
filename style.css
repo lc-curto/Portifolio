@@ -1,16 +1,31 @@
+
 /* ============================================
    1. VARIÁVEIS E CONFIGURAÇÕES GERAIS
    ============================================ */
 
-/* Variáveis: mudas a cor aqui e muda em toda a página. */
 :root {
-    --cor-marca-primaria: #142d4e;
-    --cor-marca-secundaria: #203f67;
+    /* Identidade visual */
+    --cor-marca-primaria: #10243e;
+    --cor-marca-secundaria: #1e3a5f;
+
+    /* Interação e destaque */
     --cor-interacao-principal: #2563eb;
-    --cor-destaque-suave: #dbeafe;
-    --cor-superficie-pagina: #f1f5f9;
-    --cor-texto-principal: #263449;
-    --cor-borda-padrao: #cbd5e1;
+    --cor-interacao-hover: #1d4ed8;
+    --cor-destaque-suave: #e0edff;
+
+    /* Fundos */
+    --cor-superficie-pagina: #f3f6fb;
+    --cor-superficie-cartao: #ffffff;
+    --cor-superficie-secundaria: #eaf0f8;
+
+    /* Texto */
+    --cor-texto-principal: #243247;
+    --cor-texto-secundario: #64748b;
+    --cor-texto-claro: #ffffff;
+
+    /* Bordas e sombras */
+    --cor-borda-padrao: #d9e2ef;
+    --cor-sombra: rgba(16, 36, 62, 0.08);
 }
 
 * {
@@ -18,11 +33,9 @@
 }
 
 html {
-    /* Compensa a altura do menu fixo ao saltar para uma secção. */
     scroll-padding-top: 70px;
 }
 
-/* Só anima o scroll se a pessoa não tiver desativado animações. */
 @media (prefers-reduced-motion: no-preference) {
     html {
         scroll-behavior: smooth;
@@ -33,12 +46,11 @@ body {
     margin: 0;
     font-family: system-ui, Arial, sans-serif;
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.65;
     background-color: var(--cor-superficie-pagina);
     color: var(--cor-texto-principal);
 }
 
-/* Títulos com um tipo de letra diferente do texto. */
 h1,
 h2,
 h3 {
@@ -47,26 +59,25 @@ h3 {
 }
 
 img {
+    display: block;
     max-width: 100%;
     height: auto;
 }
 
 a {
-    color: #1d4ed8;
+    color: var(--cor-interacao-principal);
 }
 
-/* Contorno visível para quem navega com o teclado. */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
     outline: 3px solid var(--cor-interacao-principal);
-    outline-offset: 2px;
+    outline-offset: 3px;
 }
 
-
 /* ============================================
-   2. MENU DE NAVEGAÇÃO (fixo no topo)
+   2. MENU DE NAVEGAÇÃO
    ============================================ */
 
 nav {
@@ -78,58 +89,32 @@ nav {
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
-    /* Alinha o logo e os links com as margens do conteúdo (1100 px). */
-    padding: 6px max(20px, calc((100% - 1100px) / 2 + 20px));
+    padding: 8px max(20px, calc((100% - 1100px) / 2 + 20px));
     background-color: var(--cor-marca-primaria);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 2px solid var(--cor-interacao-principal);
 }
 
-/* Botão do menu hambúrguer: aparece apenas em ecrãs pequenos. */
-/* Esconde a checkbox, mantendo a sua funcionalidade. */
 #menu-toggle {
     display: none;
 }
 
-/* O ícone só aparece em ecrãs pequenos. */
 .menu-icon {
     display: none;
-    color: #ffffff;
+    color: var(--cor-texto-claro);
     font-size: 1.8rem;
     cursor: pointer;
 }
 
-/* Comportamento em telemóveis. */
-@media (max-width: 600px) {
-    nav {
-        justify-content: space-between;
-    }
-
-    .menu-icon {
-        display: block;
-    }
-
-    nav ul {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    #menu-toggle:checked~ul {
-        display: flex;
-    }
-}
-
 .logo {
-    color: #ffffff;
+    color: var(--cor-texto-claro);
     font-family: Georgia, serif;
     font-size: 1.5rem;
     font-weight: bold;
     text-decoration: none;
 }
 
-/* O ponto do logo ganha a cor de destaque. */
 .logo span {
-    color: #60a5fa;
+    color: #93c5fd;
 }
 
 nav ul {
@@ -151,25 +136,25 @@ nav ul a {
     color: #cbd5e1;
     font-size: 0.95rem;
     text-decoration: none;
-    /* Linha inferior invisível; aparece ao passar o rato. */
     border-bottom: 2px solid transparent;
     transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-nav ul a:hover {
-    color: #ffffff;
-    border-bottom-color: #60a5fa;
+nav ul a:hover,
+nav ul a:focus-visible {
+    color: var(--cor-texto-claro);
+    border-bottom-color: #93c5fd;
 }
 
-
 /* ============================================
-   3. APRESENTAÇÃO (Intro)
+   3. APRESENTAÇÃO INICIAL
    ============================================ */
 
 header {
     background-color: var(--cor-marca-primaria);
-    color: #ffffff;
-    padding: 40px 20px;
+    color: var(--cor-texto-claro);
+    padding: 0 20px;
+    border-bottom: 3px solid var(--cor-interacao-principal);
 }
 
 .intro {
@@ -179,60 +164,19 @@ header {
     gap: 48px;
     width: 100%;
     max-width: 1100px;
-    box-sizing: border-box;
     margin: 0 auto;
-    padding: 45px 20px;
+    padding: 52px 20px;
 }
 
 .intro-text {
-    flex: 1 1 380px;
-}
-
-/* Cartão com um excerto de HTML, em estilo editor de código. */
-.code-example {
-    width: 100%;
     min-width: 0;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 16px;
-    overflow-x: auto;
-    white-space: pre-wrap;
-    overflow-wrap: anywhere;
-    background-color: #102440;
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: 10px;
-}
-
-.intro-code::before {
-    content: "index.html";
-    display: block;
-    margin-bottom: 14px;
-    padding: 10px 18px;
-    font-family: system-ui, Arial, sans-serif;
-    font-size: 0.8rem;
-    color: #94a3b8;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.intro-code code {
-    display: block;
-    padding: 0 18px;
-    font-family: Consolas, "Courier New", monospace;
-    font-size: 0.9rem;
-    line-height: 1.8;
-    color: #ffffff;
-}
-
-.intro-code .tag {
-    color: #7dd3fc;
 }
 
 .intro h1 {
-    margin: 0 0 12px;
-    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    margin: 0 0 16px;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
 }
 
-/* A segunda linha fica mais leve que a primeira. */
 .intro h1 span {
     font-weight: normal;
     color: #bfdbfe;
@@ -240,27 +184,27 @@ header {
 
 .intro-description {
     max-width: 55ch;
-    margin: 0 0 20px;
-    font-size: 1rem;
+    margin: 0 0 24px;
     color: #dbeafe;
+    font-size: 1rem;
 }
 
-/* Botões em forma de link */
 .button {
     display: inline-block;
     margin: 0 10px 10px 0;
     padding: 12px 24px;
     background-color: var(--cor-interacao-principal);
-    color: #ffffff;
+    color: var(--cor-texto-claro);
     font-weight: bold;
     text-decoration: none;
     border: 2px solid var(--cor-interacao-principal);
     border-radius: 6px;
+    transition: background-color 0.2s ease;
 }
 
 .button:hover {
-    background-color: #1d4ed8;
-    border-color: #1d4ed8;
+    background-color: var(--cor-interacao-hover);
+    border-color: var(--cor-interacao-hover);
 }
 
 .button-secondary {
@@ -274,32 +218,97 @@ header {
     color: var(--cor-marca-primaria);
 }
 
+/* ============================================
+   4. JANELA DE CÓDIGO
+   ============================================ */
+
+.code-window {
+    width: 100%;
+    max-width: 380px;
+    min-width: 0;
+    overflow: hidden;
+    background-color: #102440;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.code-window-header {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 32px;
+    padding: 0 12px;
+    background-color: rgba(0, 0, 0, 0.12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.code-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.dot-red {
+    background-color: #ef5350;
+}
+
+.dot-yellow {
+    background-color: #fbc02d;
+}
+
+.dot-green {
+    background-color: #4caf50;
+}
+
+.code-example {
+    width: 100%;
+    margin: 0;
+    padding: 16px;
+    overflow-x: auto;
+    background: transparent;
+    border: none;
+    color: #dbeafe;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.8rem;
+    line-height: 1.7;
+    white-space: pre;
+}
+
+.code-purple {
+    color: #c792ea;
+}
+
+.code-green {
+    color: #a5d6a7;
+}
 
 /* ============================================
-   4. SECÇÕES E TEXTO
+   5. CONTEÚDO E SECÇÕES
    ============================================ */
 
 main {
+    width: 100%;
     max-width: 1100px;
-    margin: 30px auto;
+    margin: 32px auto;
     padding: 0 20px;
 }
 
 section {
-    background-color: #ffffff;
-    margin-bottom: 25px;
-    padding: 30px;
+    margin-bottom: 28px;
+    padding: 32px;
+    background-color: var(--cor-superficie-cartao);
     border: 1px solid var(--cor-borda-padrao);
-    border-radius: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px var(--cor-sombra);
 }
 
 section h2 {
-    margin: 0 0 20px;
-    font-size: 1.8rem;
+    margin: 0 0 22px;
     color: var(--cor-marca-primaria);
+    font-size: clamp(1.55rem, 3vw, 1.8rem);
 }
 
-/* Linha decorativa por baixo de cada h2 */
 section h2::after {
     content: "";
     display: block;
@@ -329,21 +338,19 @@ li {
     margin-bottom: 6px;
 }
 
-/* Linhas de texto com um tamanho confortável para ler */
 .about-text {
     max-width: 65ch;
 }
 
-
 /* ============================================
-   5. FLEXBOX E CARTÕES
+   6. FLEXBOX E CARTÕES
    ============================================ */
 
 .flex-container {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    gap: 25px;
+    gap: 24px;
 }
 
 .flex-item {
@@ -352,11 +359,12 @@ li {
 }
 
 .card {
-    padding: 20px;
-    background-color: #f8fafc;
+    padding: 22px;
+    background-color: var(--cor-superficie-cartao);
     border: 1px solid var(--cor-borda-padrao);
     border-left: 4px solid var(--cor-interacao-principal);
-    border-radius: 8px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px var(--cor-sombra);
 }
 
 .card h3 {
@@ -367,26 +375,51 @@ li {
     margin-bottom: 0;
 }
 
-/* Etiqueta com o estado do projeto */
-.project-status {
-    display: inline-block;
-    padding: 2px 12px;
-    background-color: var(--cor-destaque-suave);
-    color: var(--cor-marca-primaria);
-    font-size: 0.9rem;
-    font-weight: bold;
-    border-radius: 999px;
+/* Cartões de interesses */
+
+#hobbies .flex-container {
+    align-items: stretch;
+    gap: 20px;
 }
 
-.projects-note {
-    margin: 25px 0 0;
-    color: #475569;
-    font-style: italic;
+#hobbies .card {
+    display: flex;
+    flex: 1 1 220px;
+    flex-direction: column;
+    min-width: 0;
 }
 
+#hobbies .card h3 {
+    margin-top: 0;
+}
+
+#hobbies .card p {
+    margin-bottom: 0;
+}
+
+/* Lista de tarefas */
+
+.tasks {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--cor-borda-padrao);
+}
+
+.tasks h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.tasks ol {
+    margin-bottom: 0;
+}
+
+.tasks li {
+    padding: 5px 0;
+}
 
 /* ============================================
-   6. CARTÃO DE PERFIL
+   7. CARTÃO DE PERFIL
    ============================================ */
 
 .profile-card {
@@ -407,13 +440,63 @@ li {
     margin: 0;
 }
 
-
 /* ============================================
-   7. TABELA DE HORÁRIO
+   8. PROJETOS
    ============================================ */
 
-/* Em ecrãs pequenos a tabela desliza na horizontal
-   em vez de partir o layout da página. */
+#projects .flex-container {
+    align-items: stretch;
+    gap: 24px;
+}
+
+#projects .card {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-status {
+    display: inline-block;
+    padding: 3px 12px;
+    background-color: var(--cor-destaque-suave);
+    color: var(--cor-marca-primaria);
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 999px;
+}
+
+#projects .project-status {
+    align-self: flex-start;
+    margin-top: auto;
+    margin-bottom: 12px;
+}
+
+#projects .project-link {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 9px 14px;
+    background-color: var(--cor-interacao-principal);
+    color: var(--cor-texto-claro);
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid var(--cor-interacao-principal);
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+#projects .project-link:hover {
+    background-color: var(--cor-interacao-hover);
+}
+
+.projects-note {
+    margin: 25px 0 0;
+    color: var(--cor-texto-secundario);
+    font-style: italic;
+}
+
+/* ============================================
+   9. TABELA DE HORÁRIO
+   ============================================ */
+
 .table-container {
     overflow-x: auto;
 }
@@ -422,14 +505,14 @@ table {
     width: 100%;
     min-width: 600px;
     border-collapse: collapse;
-    background-color: #ffffff;
+    background-color: var(--cor-superficie-cartao);
 }
 
 caption {
     padding-bottom: 8px;
-    text-align: left;
+    color: var(--cor-texto-secundario);
     font-size: 0.9rem;
-    color: #475569;
+    text-align: left;
 }
 
 th,
@@ -441,27 +524,24 @@ td {
 
 thead th {
     background-color: var(--cor-marca-secundaria);
-    color: #ffffff;
+    color: var(--cor-texto-claro);
 }
 
-/* A coluna das horas fica destacada */
 tbody th {
     background-color: var(--cor-destaque-suave);
     color: var(--cor-marca-primaria);
 }
 
 tbody tr:nth-child(even) td {
-    background-color: #eff6ff;
+    background-color: var(--cor-superficie-secundaria);
 }
 
 tbody tr:hover td {
     background-color: var(--cor-destaque-suave);
 }
 
-
-
 /* ============================================
-   8. FORMULÁRIO
+   10. FORMULÁRIO DE CONTACTO
    ============================================ */
 
 #contact form {
@@ -480,14 +560,18 @@ input,
 textarea {
     display: block;
     width: 100%;
-    box-sizing: border-box;
     padding: 12px;
     font-family: inherit;
     font-size: 1rem;
     color: var(--cor-texto-principal);
-    background-color: #ffffff;
+    background-color: var(--cor-superficie-cartao);
     border: 1px solid var(--cor-borda-padrao);
     border-radius: 6px;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--cor-interacao-principal);
 }
 
 textarea {
@@ -498,106 +582,35 @@ form button {
     margin-top: 20px;
     padding: 12px 24px;
     background-color: var(--cor-interacao-principal);
-    color: #ffffff;
+    color: var(--cor-texto-claro);
     font-size: 1rem;
     font-weight: bold;
     border: none;
     border-radius: 6px;
     cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
 form button:hover {
-    background-color: #1d4ed8;
+    background-color: var(--cor-interacao-hover);
 }
-
-/* Ajustes para ecrãs pequenos */
-@media (max-width: 600px) {
-    #contact form {
-        max-width: 100%;
-    }
-}
-
-/* Janela de código */
-.code-window {
-    width: 100%;
-    max-width: 380px;
-    min-width: 0;
-    box-sizing: border-box;
-    overflow: hidden;
-    background-color: #102440;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 10px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-}
-
-/* Barra superior */
-.code-window-header {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    height: 28px;
-    padding: 0 10px;
-    background-color: rgba(0, 0, 0, 0.12);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-/* Círculos coloridos */
-.code-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-}
-
-.dot-red {
-    background-color: #ef5350;
-}
-
-.dot-yellow {
-    background-color: #fbc02d;
-}
-
-.dot-green {
-    background-color: #4caf50;
-}
-
-/* Texto do código */
-.code-example {
-    margin: 0;
-    padding: 14px;
-    overflow-x: auto;
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    color: #dbeafe;
-    font-family: Consolas, "Courier New", monospace;
-    font-size: 0.75rem;
-    line-height: 1.7;
-    white-space: pre;
-}
-
-/* Cores da sintaxe */
-.code-purple {
-    color: #c792ea;
-}
-
-.code-green {
-    color: #a5d6a7;
-}
-
-/* Esconder em telemóveis */
-@media (max-width: 600px) {
-    .code-window {
-        display: none;
-    }
-}
-
-
 
 /* ============================================
-   10. RESPONSIVIDADE
+   10. FOOTER   
+   ============================================ */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: var(--cor-marca-primaria);
+    color: var(--cor-texto-claro);
+    font-size: 0.9rem;
+}
+/* ============================================
+   12. RESPONSIVIDADE
    ============================================ */
 
-/* Tablets e ecrãs mais estreitos */
+/* Tablets */
+
 @media (max-width: 800px) {
     .intro {
         grid-template-columns: minmax(0, 1fr);
@@ -605,33 +618,28 @@ form button:hover {
         padding: 35px 20px;
     }
 
-    .intro-content h1 {
+    .intro h1 {
         font-size: clamp(1.8rem, 6vw, 2.4rem);
+    }
+
+    .code-window {
+        max-width: 100%;
     }
 }
 
 /* Telemóveis */
-@media (max-width: 600px) {
 
-    /* Menu de navegação */
+@media (max-width: 600px) {
     nav {
         position: relative;
         justify-content: space-between;
         align-items: center;
     }
 
-    #menu-toggle {
-        display: none;
-    }
-
     .menu-icon {
         display: block;
-        cursor: pointer;
-        font-size: 1.8rem;
-        color: white;
     }
 
-    /* Menu fechado por padrão */
     nav ul {
         display: none;
         flex-direction: column;
@@ -641,8 +649,7 @@ form button:hover {
         margin: 0;
     }
 
-    /* Abre o menu quando o checkbox está marcado */
-    #menu-toggle:checked~ul {
+    #menu-toggle:checked ~ ul {
         display: flex;
     }
 
@@ -656,15 +663,13 @@ form button:hover {
         scroll-padding-top: 0;
     }
 
-    /* Apresentação inicial */
     header {
-        padding: 30px 0;
+        padding: 0;
     }
 
     .intro {
         width: 100%;
-        box-sizing: border-box;
-        padding: 25px 20px;
+        padding: 28px 20px;
     }
 
     .intro-content {
@@ -672,7 +677,7 @@ form button:hover {
         min-width: 0;
     }
 
-    .intro-content h1 {
+    .intro h1 {
         font-size: clamp(1.6rem, 6vw, 2.2rem);
         line-height: 1.2;
         overflow-wrap: break-word;
@@ -685,53 +690,34 @@ form button:hover {
         overflow-wrap: break-word;
     }
 
-    /* Esconde o exemplo de código */
-
-    .code-example {
-        width: 100%;
-        box-sizing: border-box;
-        margin: 0;
-        padding: 14px;
-        overflow: hidden;
-        background: transparent;
-        border: none;
-        border-radius: 0;
-        color: #dbeafe;
-        font-family: Consolas, "Courier New", monospace;
-        font-size: 0.7rem;
-        line-height: 1.7;
-        white-space: pre-wrap;
-        overflow-wrap: anywhere;
+    .code-window {
+        display: none;
     }
 
-    /* Conteúdo principal */
     main {
         width: 100%;
         max-width: 100%;
-        box-sizing: border-box;
-        margin: 15px auto;
+        margin: 18px auto;
         padding: 0 12px;
     }
 
     section {
+        margin-bottom: 18px;
         padding: 20px;
-        box-sizing: border-box;
+        border-radius: 10px;
     }
 
     section h2 {
         font-size: 1.5rem;
     }
 
-    /* Tabelas */
     th,
     td {
         padding: 8px;
         font-size: 0.9rem;
     }
 
-    /* Sobre mim: foto antes do texto */
     #about .flex-container {
-        display: flex;
         flex-direction: column;
     }
 
@@ -739,25 +725,40 @@ form button:hover {
         order: -1;
         width: 100%;
         min-width: 0;
-        box-sizing: border-box;
     }
 
     #about .about-text {
         order: 0;
         width: 100%;
         min-width: 0;
-        box-sizing: border-box;
+    }
+
+    #projects .flex-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #projects .card {
+        width: 100%;
+    }
+
+    #projects .project-link {
+        max-width: 100%;
+    }
+
+    #contact form {
+        max-width: 100%;
     }
 }
 
 /* Telemóveis muito estreitos */
-@media (max-width: 360px) {
 
+@media (max-width: 360px) {
     .intro {
-        padding: 20px 15px;
+        padding: 22px 15px;
     }
 
-    .intro-content h1 {
+    .intro h1 {
         font-size: 1.5rem;
     }
 
@@ -773,5 +774,16 @@ form button:hover {
     td {
         padding: 6px;
         font-size: 0.8rem;
+    }
+}
+
+/* Respeita a preferência por menos animações */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
     }
 }
