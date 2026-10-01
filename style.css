@@ -68,6 +68,23 @@ a {
     color: var(--cor-interacao-principal);
 }
 
+.skip-link {
+    position: absolute;
+    top: -50px;
+    left: 20px;
+    z-index: 20;
+    padding: 8px 14px;
+    background-color: var(--cor-texto-claro);
+    color: var(--cor-marca-primaria);
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 0 0 6px 6px;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -397,6 +414,15 @@ li {
     margin-bottom: 0;
 }
 
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px var(--cor-sombra);
+}
+
 /* Lista de tarefas */
 
 .tasks {
@@ -480,11 +506,12 @@ li {
     text-decoration: none;
     border: 1px solid var(--cor-interacao-principal);
     border-radius: 6px;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 #projects .project-link:hover {
     background-color: var(--cor-interacao-hover);
+    transform: translateY(-2px);
 }
 
 .projects-note {
@@ -672,7 +699,7 @@ footer {
         padding: 28px 20px;
     }
 
-    .intro-content {
+    .intro-text {
         width: 100%;
         min-width: 0;
     }
@@ -785,5 +812,6 @@ footer {
     *::after {
         scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
+        transform: none !important;
     }
 }
