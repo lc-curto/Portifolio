@@ -83,7 +83,7 @@ header {
     border-bottom: 3px solid #2563eb;
 }
 
-.hero {
+.intro {
     display: flex;
     align-items: center;
     gap: 40px;
@@ -91,7 +91,7 @@ header {
     padding-bottom: 55px;
 }
 
-.hero > div,
+.intro > div,
 .code {
     flex: 1;
 }
@@ -386,7 +386,7 @@ footer a {
 /* Telemóveis */
 @media (max-width: 700px) {
     nav,
-    .hero,
+    .intro,
     .about {
         flex-direction: column;
     }
@@ -399,7 +399,7 @@ footer a {
         width: 100%;
     }
 
-    .hero {
+    .intro {
         align-items: stretch;
         padding-top: 35px;
         padding-bottom: 35px;
